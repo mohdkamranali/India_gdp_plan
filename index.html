@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Operation ₹10 Trillion — A Masterplan</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1208;
+    --paper: #f5f0e8;
+    --saffron: #e8621a;
+    --green: #1a6b3a;
+    --red: #c0392b;
+    --stamp: #8b1a1a;
+    --muted: #7a6e5f;
+    --border: #c8b99a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #2c2416;
+    font-family: 'Space Mono', monospace;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+
+  .document {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--paper);
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 27px, rgba(180,160,120,0.15) 27px, rgba(180,160,120,0.15) 28px),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    box-shadow: 0 20px 80px rgba(0,0,0,0.6), inset 0 0 60px rgba(180,150,100,0.1);
+    position: relative;
+    overflow: hidden;
+    animation: unfurl 0.8s ease-out;
+  }
+
+  @keyframes unfurl {
+    from { opacity: 0; transform: translateY(30px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  .corner-seal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 90px;
+    height: 90px;
+    border: 3px solid var(--stamp);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 8px;
+    font-weight: 700;
+    color: var(--stamp);
+    letter-spacing: 1px;
+    line-height: 1.4;
+    transform: rotate(12deg);
+    opacity: 0.7;
+    padding: 10px;
+  }
+
+  .watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-35deg);
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    font-weight: 900;
+    color: rgba(200, 100, 50, 0.06);
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 0;
+    letter-spacing: 8px;
+  }
+
+  .content {
+    position: relative;
+    z-index: 1;
+    padding: 50px 60px;
+  }
+
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 3px double var(--border);
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+  }
+
+  .classification {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--red);
+    border: 2px solid var(--red);
+    padding: 4px 10px;
+    display: inline-block;
+  }
+
+  .doc-number {
+    font-size: 9px;
+    color: var(--muted);
+    text-align: right;
+    line-height: 1.8;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .ministry-tag {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 900;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+
+  h1 span {
+    color: var(--saffron);
+  }
+
+  .subtitle {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    margin-top: 12px;
+    font-style: italic;
+  }
+
+  .gdp-bar {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 16px 24px;
+    margin: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .gdp-bar .arrow {
+    font-size: 20px;
+    color: var(--saffron);
+  }
+
+  .gdp-bar .target {
+    color: var(--saffron);
+  }
+
+  .intro {
+    font-size: 12px;
+    line-height: 2;
+    color: var(--muted);
+    border-left: 3px solid var(--saffron);
+    padding-left: 20px;
+    margin-bottom: 40px;
+    font-style: italic;
+  }
+
+  .section {
+    margin-bottom: 40px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .section-header {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .section-number {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--saffron);
+    font-weight: 700;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    flex: 1;
+    padding: 0 20px;
+  }
+
+  .section-revenue {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--green);
+    background: rgba(26,107,58,0.2);
+    padding: 4px 12px;
+    white-space: nowrap;
+  }
+
+  .section-body {
+    padding: 24px;
+  }
+
+  .mechanism {
+    font-size: 12px;
+    line-height: 1.9;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+
+  .fine-print {
+    font-size: 10px;
+    color: var(--muted);
+    font-style: italic;
+    border-top: 1px dashed var(--border);
+    padding-top: 12px;
+    line-height: 1.8;
+  }
+
+  .fine-print strong {
+    color: var(--red);
+    font-style: normal;
+  }
+
+  .calc-box {
+    background: rgba(26,18,8,0.05);
+    border: 1px dashed var(--border);
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-size: 11px;
+    line-height: 2;
+  }
+
+  .calc-box .total {
+    font-weight: 700;
+    color: var(--green);
+    border-top: 1px solid var(--border);
+    margin-top: 8px;
+    padding-top: 8px;
+  }
+
+  .summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    font-size: 12px;
+  }
+
+  .summary-table th {
+    background: var(--ink);
+    color: var(--saffron);
+    padding: 12px 16px;
+    text-align: left;
+    letter-spacing: 1px;
+    font-size: 10px;
+  }
+
+  .summary-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .summary-table tr:nth-child(even) td {
+    background: rgba(200,185,154,0.2);
+  }
+
+  .summary-table .revenue-col {
+    color: var(--green);
+    font-weight: 700;
+  }
+
+  .grand-total-row td {
+    background: var(--ink) !important;
+    color: var(--paper);
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  .grand-total-row .revenue-col {
+    color: var(--saffron) !important;
+  }
+
+  .gap-section {
+    border: 2px solid var(--red);
+    padding: 20px 24px;
+    margin: 30px 0;
+  }
+
+  .gap-section h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--red);
+    margin-bottom: 12px;
+    font-size: 16px;
+  }
+
+  .gap-section p {
+    font-size: 12px;
+    line-height: 1.9;
+    color: var(--muted);
+  }
+
+  .gap-section .gap-number {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--red);
+    margin: 10px 0;
+  }
+
+  .footer-stamp {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 3px double var(--border);
+  }
+
+  .stamp-box {
+    display: inline-block;
+    border: 4px solid var(--stamp);
+    padding: 12px 30px;
+    transform: rotate(-2deg);
+    color: var(--stamp);
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 4px;
+    opacity: 0.8;
+    margin-bottom: 20px;
+  }
+
+  .disclaimer {
+    font-size: 9px;
+    color: var(--muted);
+    line-height: 1.9;
+    max-width: 500px;
+    margin: 0 auto;
+    font-style: italic;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 9px;
+    letter-spacing: 2px;
+    padding: 2px 8px;
+    margin-right: 6px;
+    font-weight: 700;
+  }
+
+  .tag.absurd { background: var(--red); color: white; }
+  .tag.genius { background: var(--green); color: white; }
+  .tag.inevitable { background: var(--saffron); color: white; }
+
+  @media (max-width: 600px) {
+    .content { padding: 30px 24px; }
+    h1 { font-size: 26px; }
+    .section-title { font-size: 14px; }
+    .gdp-bar { flex-direction: column; gap: 8px; text-align: center; }
+    .top-bar { flex-direction: column; gap: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="document">
+  <div class="watermark">CLASSIFIED</div>
+
+  <div class="corner-seal">
+    GOVT OF<br>INDIA<br>★<br>EYES<br>ONLY
+  </div>
+
+  <div class="content">
+
+    <div class="top-bar">
+      <div>
+        <div class="classification">TOP SECRET</div>
+        <div style="font-size:9px; color:var(--muted); margin-top:6px;">Ref: MOF/GDP/2024/ABSURD/001</div>
+      </div>
+      <div class="doc-number">
+        Ministry of Finance<br>
+        New Delhi — 110001<br>
+        Date: Classified
+      </div>
+    </div>
+
+    <div class="header">
+      <div class="ministry-tag">Government of India — Planning Commission (Revived)</div>
+      <h1>Operation <span>₹10 Trillion</span></h1>
+      <h1 style="font-size:22px; color:var(--muted); font-style:italic;">A Masterplan for GDP Growth</h1>
+      <div class="subtitle">Extracting national income from places economists forgot to look</div>
+    </div>
+
+    <div class="gdp-bar">
+      <span>CURRENT GDP: <span style="color:#aaa">$4 Trillion</span></span>
+      <span class="arrow">→→→</span>
+      <span>TARGET: <span class="target">$10 Trillion</span></span>
+      <span style="font-size:11px; color:#aaa">GAP: $6 Trillion</span>
+    </div>
+
+    <div class="intro">
+      This document outlines a comprehensive revenue generation strategy for the Government of India. All measures herein have been carefully designed to avoid inconveniencing corporations, industrialists, or anyone who attends Davos. The burden of national prosperity shall be distributed equitably across citizens, their basic biological functions, and their moments of greatest vulnerability.
+    </div>
+
+    <!-- MEASURE 1 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-number">MEASURE 01</span>
+        <span class="section-title">Carbon Credit on Human Breathing</span>
+        <span class="section-revenue">~$0.65B/yr</span>
+      </div>
+      <div class="section-body">
+        <div style="margin-bottom:10px;">
+          <span class="tag absurd">ABSURD</span>
+          <span class="tag inevitable">INEVITABLE</span>
+        </div>
+        <div class="mechanism">
+          Every Indian citizen exhales approximately 0.073 tonnes of CO₂ annually. Under this measure, each citizen must purchase a breathing permit at the prevailing carbon credit rate. Non-compliance renders the act of respiration a punishable offence under the Environment Protection Act, amended for convenience.
+        </div>
+        <div class="calc-box">
+          Population: 1.44 billion<br>
+          CO₂ per person per year: 0.073 tonnes<br>
+          Total CO₂: ~105 million tonnes<br>
+          Price per tonne: $6.10 (2025 voluntary market rate)<br>
+          <div class="total">Annual Revenue: ~$640 million</div>
+        </div>
+        <div class="fine-print">
+          <strong>Fine Print:</strong> Exemptions available for industrialists, Members of Parliament, and anyone who has donated to the PM Relief Fund. Sleeping citizens will be charged at 60% rate as breathing slows during sleep. Infants billed to parents. Yoga practitioners charged a premium for deep breathing exercises.
+        </div>
+      </div>
+    </div>
+
+    <!-- MEASURE 2 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-number">MEASURE 02</span>
+        <span class="section-title">Grocery Insurance During Bank Withdrawal Freezes</span>
+        <span class="section-revenue">~$2.1B/yr</span>
+      </div>
+      <div class="section-body">
+        <div style="margin-bottom:10px;">
+          <span class="tag genius">GENIUS</span>
+          <span class="tag inevitable">INEVITABLE</span>
+        </div>
+        <div class="mechanism">
+          When the RBI restricts bank withdrawals (as seen with Yes Bank, PMC Bank, and others), citizens cannot access their own money to buy food. This measure introduces mandatory Grocery Insurance, deducted automatically from bank accounts before they are frozen, ensuring citizens can buy food they cannot afford because their money is locked in the bank that triggered the insurance deduction.
+        </div>
+        <div class="calc-box">
+          Target policyholders: 300 million households<br>
+          Annual premium: ₹600 per household (~$7.20)<br>
+          Collection method: Auto-debit, no opt-out<br>
+          <div class="total">Annual Revenue: ~$2.1 billion</div>
+        </div>
+        <div class="fine-print">
+          <strong>Fine Print:</strong> Claims processing takes 18 to 24 months. Claim forms available only at bank branches that are currently closed. Insurance does not cover rice, wheat, vegetables, or cooking oil. Covers decorative gourds and imported cheese only.
+        </div>
+      </div>
+    </div>
+
+    <!-- MEASURE 3 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-number">MEASURE 03</span>
+        <span class="section-title">Pothole Encounter Tax</span>
+        <span class="section-revenue">~$4.8B/yr</span>
+      </div>
+      <div class="section-body">
+        <div style="margin-bottom:10px;">
+          <span class="tag genius">GENIUS</span>
+        </div>
+        <div class="mechanism">
+          India's roads contain an estimated 3.5 million potholes. Each pothole encounter shall be considered use of public infrastructure and taxed accordingly via GPS-enabled vehicle tracking. The more potholes you hit, the more infrastructure you have "used." Roads need not be repaired as this would reduce tax revenue.
+        </div>
+        <div class="calc-box">
+          Registered vehicles: 340 million<br>
+          Average pothole encounters per vehicle per year: 1,200<br>
+          Tax per encounter: ₹1 (~$0.012)<br>
+          <div class="total">Annual Revenue: ~$4.8 billion</div>
+        </div>
+        <div class="fine-print">
+          <strong>Fine Print:</strong> Revenue from this measure will be allocated to the Road Repair Fund. The Road Repair Fund will be used to build new roads with new potholes to generate future tax revenue. Vehicles with broken suspensions from pothole damage will be taxed additionally for "modified vehicle status."
+        </div>
+      </div>
+    </div>
+
+    <!-- MEASURE 4 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-number">MEASURE 04</span>
+        <span class="section-title">Queue Waiting Time Monetisation Levy</span>
+        <span class="section-revenue">~$3.2B/yr</span>
+      </div>
+      <div class="section-body">
+        <div style="margin-bottom:10px;">
+          <span class="tag absurd">ABSURD</span>
+          <span class="tag genius">GENIUS</span>
+        </div>
+        <div class="mechanism">
+          Indian citizens spend an estimated 6 billion hours per year waiting in government office queues. This productive time is wasted. Under this measure, the government monetises citizen waiting time as a "civic participation contribution." You are not waiting. You are contributing to national productivity metrics. Pay accordingly.
+        </div>
+        <div class="calc-box">
+          Total queue hours nationally: 6 billion/year<br>
+          Levy rate: ₹8 per hour (~$0.096)<br>
+          Collection method: Aadhaar-linked queue token system<br>
+          <div class="total">Annual Revenue: ~$3.2 billion (before GST on the levy itself)</div>
+        </div>
+        <div class="fine-print">
+          <strong>Fine Print:</strong> Citizens who complain about queue length will be moved to a separate queue to complain, which is also taxed. Queue tax is subject to 18% GST. GST refund claims must be filed in person. In a queue.
+        </div>
+      </div>
+    </div>
+
+    <!-- MEASURE 5 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-number">MEASURE 05</span>
+        <span class="section-title">Cricket Emotional Distress Surcharge</span>
+        <span class="section-revenue">~$1.4B/yr</span>
+      </div>
+      <div class="section-body">
+        <div style="margin-bottom:10px;">
+          <span class="tag absurd">ABSURD</span>
+        </div>
+        <div class="mechanism">
+          When India loses a cricket match, citizens experience documented emotional distress which reduces workplace productivity. This is an externality. The BCCI and streaming platforms already profit from the match. Citizens must now pay an Emotional Recovery Tax per wicket lost in the final five overs, collected automatically via UPI the moment they close the Hotstar app in despair.
+        </div>
+        <div class="calc-box">
+          Cricket viewers: 650 million per major match<br>
+          Average matches with heartbreak endings per year: 8<br>
+          Surcharge per viewer per incident: ₹33 (~$0.40)<br>
+          <div class="total">Annual Revenue: ~$1.4 billion (more in World Cup years)</div>
+        </div>
+        <div class="fine-print">
+          <strong>Fine Print:</strong> Tax is doubled if India was winning until the last over. Pakistan matches carry a 3x multiplier. No refunds if you turned off the TV early and missed the collapse. You still felt it. You still pay.
+        </div>
+      </div>
+    </div>
+
+    <!-- MEASURE 6 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-number">MEASURE 06</span>
+        <span class="section-title">WhatsApp Forward Verification Fee</span>
+        <span class="section-revenue">~$5.6B/yr</span>
+      </div>
+      <div class="section-body">
+        <div style="margin-bottom:10px;">
+          <span class="tag inevitable">INEVITABLE</span>
+          <span class="tag genius">GENIUS</span>
+        </div>
+        <div class="mechanism">
+          India has 500 million WhatsApp users generating an estimated 100 billion forwards per year, most of which are unverified health tips, expired offers, and good morning messages with flowers. Each forward shall require a Fact Verification Stamp at ₹0.10 per forward. Unverified forwards will carry a ₹500 fine. The government will not actually verify anything. The stamp is the product.
+        </div>
+        <div class="calc-box">
+          Annual forwards: ~100 billion<br>
+          Fee per forward: ₹0.10 (~$0.0012)<br>
+          Compliance rate assumed: 47%<br>
+          <div class="total">Annual Revenue: ~$5.6 billion</div>
+        </div>
+        <div class="fine-print">
+          <strong>Fine Print:</strong> Good morning messages with sunrises are taxed at standard rate. Good morning messages with Lord Ganesha are tax exempt as they constitute religious expression. Forward chains that promise good luck if sent to 10 people will be taxed on all 10 anticipated forwards proactively.
+        </div>
+      </div>
+    </div>
+
+    <!-- SUMMARY TABLE -->
+    <h2 style="font-family:'Playfair Display',serif; font-size:22px; margin: 40px 0 20px; border-bottom: 2px solid var(--border); padding-bottom:10px;">Revenue Summary</h2>
+
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>MEASURE</th>
+          <th>TARGET</th>
+          <th>ANNUAL REVENUE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>01</td>
+          <td>Carbon Credit on Breathing</td>
+          <td>All 1.44B citizens</td>
+          <td class="revenue-col">$0.64B</td>
+        </tr>
+        <tr>
+          <td>02</td>
+          <td>Grocery Insurance (Bank Freeze)</td>
+          <td>300M households</td>
+          <td class="revenue-col">$2.10B</td>
+        </tr>
+        <tr>
+          <td>03</td>
+          <td>Pothole Encounter Tax</td>
+          <td>340M vehicles</td>
+          <td class="revenue-col">$4.80B</td>
+        </tr>
+        <tr>
+          <td>04</td>
+          <td>Queue Waiting Time Levy</td>
+          <td>Govt office visitors</td>
+          <td class="revenue-col">$3.20B</td>
+        </tr>
+        <tr>
+          <td>05</td>
+          <td>Cricket Distress Surcharge</td>
+          <td>650M viewers</td>
+          <td class="revenue-col">$1.40B</td>
+        </tr>
+        <tr>
+          <td>06</td>
+          <td>WhatsApp Forward Fee</td>
+          <td>500M users</td>
+          <td class="revenue-col">$5.60B</td>
+        </tr>
+        <tr class="grand-total-row">
+          <td colspan="3">TOTAL ANNUAL REVENUE FROM MEASURES</td>
+          <td class="revenue-col">~$17.7B/yr</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="gap-section">
+      <h3>The Small Problem</h3>
+      <p>India needs to add $6 trillion in GDP to reach the $10 trillion target. At $17.7 billion per year from all these measures combined:</p>
+      <div class="gap-number">338 years to close the gap.</div>
+      <p>This is, admittedly, a longer timeline than most five-year plans. However, the measures demonstrate something important: taxing citizens for breathing, waiting, grieving cricket losses, and forwarding memes generates roughly what India's top 10 corporations make in profit in a single quarter. The math, as always, points toward the people who are not in this document at all.</p>
+    </div>
+
+    <div class="footer-stamp">
+      <div class="stamp-box">APPROVED IN PRINCIPLE</div>
+      <div class="disclaimer">
+        This document is entirely satirical. No actual policy is being proposed. Any resemblance to real government measures — past, present, or suspiciously imminent — is a coincidence that should concern you deeply. All revenue figures are real calculations applied to absurd premises. The absurdity of the premise does not make the math wrong.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
